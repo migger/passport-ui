@@ -1,0 +1,13 @@
+<mat-card class="passport-page-card" [style.background-color]="backgroundColor">
+  <img class='passport-page-card-image' [src]="page.href"/>
+  <mat-card-content class="passport-page-card-capture">
+    <div *ngIf="type">
+      Страница<br>
+      {{type}}
+    </div>
+    <div *ngIf="!type">
+      Неизвестная<br>
+      старница
+    </div>
+  </mat-card-content>
+</mat-card>

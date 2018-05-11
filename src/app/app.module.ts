@@ -1,16 +1,32 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+import {PassportPageViewComponent} from './passport-page-view/passport-page-view.component';
+
+import {MatCardModule} from "@angular/material/card";
+import {ChangeStateEventEmitterService} from "./change-state-event-emitter.service";
+import {UnknownPagesViewComponent} from './unknown-pages-view/unknown-pages-view.component';
+import {UploadElementComponent} from './upload-element/upload-element.component';
+import { MatButtonModule} from "@angular/material";
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PassportPageViewComponent,
+    UnknownPagesViewComponent,
+    UploadElementComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MatCardModule,
+    MatButtonModule
   ],
-  providers: [],
+  providers: [
+    ChangeStateEventEmitterService
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

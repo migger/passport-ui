@@ -1,0 +1,23 @@
+.passport-page-card {
+  min-width: 100px;
+  max-width: 100px;
+  min-height: 100px;
+  max-height: 100px;
+  align-content: center;
+  display: inline-block;
+  margin: 10px;
+}
+
+.passport-page-card-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.passport-page-card-capture {
+  display: block;
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
