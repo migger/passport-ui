@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Injectable, OnInit} from '@angular/core';
+import {UploadFileService} from "../upload-file.service";
+import {HttpEventType} from "@angular/common/http";
 
 @Component({
   selector: 'app-upload-element',
@@ -6,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./upload-element.component.css']
 })
 export class UploadElementComponent implements OnInit {
+  uploadFileService: UploadFileService;
 
-  constructor() { }
+  constructor(private uploadFileService: UploadFileService) {
+    this.uploadFileService = uploadFileService;
+    console.log(uploadFileService);
+
+  }
 
   ngOnInit() {
   }
@@ -16,7 +23,9 @@ export class UploadElementComponent implements OnInit {
     let inputElement = document.createElement("input");
     inputElement.type = "file";
     inputElement.multiple = true;
-    inputElement.onchange = (event) => console.log(event);
+    inputElement.onchange = (event) => {
+      this.uploadFileService.uploadFiles(event.target.files);
+    };
     inputElement.click();
   }
 }

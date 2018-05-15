@@ -30,3 +30,12 @@
   margin-right: -15px;
 
 }
+
+.passport-view-dropzone {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(100, 100, 100, 0.5);
+}

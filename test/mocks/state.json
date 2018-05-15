@@ -1,0 +1,33 @@
+{
+  "expression": "http://localhost:8080/api/state.json",
+  "method": "GET",
+  "name": "XXX"
+  "isArray": false,
+  "responses": {
+    "empty-state": {
+      "default": true,
+      "data": {
+      "passport": {
+        "page1": {
+          "href": "https://cdn1.savepice.ru/uploads/2018/5/11/d627111137898c87ac373755e44c751f-full.png"
+        }
+      }
+    },
+    "full-satate": {
+      "default": false,
+      "data": {
+        "passport": {
+          "page1": {
+            "href": "https://cdn1.savepice.ru/uploads/2018/5/11/d627111137898c87ac373755e44c751f-full.png"
+          },
+          "page2": {
+            "href": "https://cdn1.savepice.ru/uploads/2018/5/11/d627111137898c87ac373755e44c751f-full.png"
+          },
+          "page3": {
+            "href": "https://cdn1.savepice.ru/uploads/2018/5/11/d627111137898c87ac373755e44c751f-full.png"
+          }
+        }
+      }
+    }
+  }
+}

@@ -39,13 +39,14 @@ export class PassportPageViewComponent implements OnInit {
         if (pageName in state.passport) {
           this.page = state.passport[pageName];
           this.updateBackground();
+          return;
         }
       }
+      this.page = {'href': require('./img/' + this.type + '.png')};
     }
   }
 
   ngOnInit(): void {
-    console.log(this.page);
     if (this.type && !this.page) {
       this.page = {'href': require('./img/' + this.type + '.png')};
     }

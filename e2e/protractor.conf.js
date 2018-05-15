@@ -9,7 +9,7 @@ exports.config = {
     './src/**/*.e2e-spec.ts'
   ],
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'firefox'
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
@@ -19,7 +19,14 @@ exports.config = {
     defaultTimeoutInterval: 30000,
     print: function() {}
   },
+  mocks: {
+    // default: ['mock-login'], // default value: []
+    // dir: 'my-mocks' // default value: 'mocks'
+  },
   onPrepare() {
+    require('protractor-http-mock').config = {
+      protractorConfig: 'e2e/protractor.conf.js' // default value: 'protractor-conf.js'
+    };
     require('ts-node').register({
       project: require('path').join(__dirname, './tsconfig.e2e.json')
     });

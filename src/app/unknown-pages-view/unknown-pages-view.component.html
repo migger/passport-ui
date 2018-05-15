@@ -1,3 +1,9 @@
 <div class="passport-underfloor-container">
+  <div *ngFor="let load of loadingArray">
+    <div>{{load.name}}</div>
+    <mat-progress-bar *ngIf="!load.error" mode="determinate" [value]=load.progress*100></mat-progress-bar>
+    <div              *ngIf="load.error" style="color: red">{{load.error}}</div>
+  </div>
+
   <app-passport-page-view *ngFor="let page of pagesArray" [page]="page"></app-passport-page-view>
 </div>

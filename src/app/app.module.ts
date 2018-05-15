@@ -8,7 +8,9 @@ import {MatCardModule} from "@angular/material/card";
 import {ChangeStateEventEmitterService} from "./change-state-event-emitter.service";
 import {UnknownPagesViewComponent} from './unknown-pages-view/unknown-pages-view.component';
 import {UploadElementComponent} from './upload-element/upload-element.component';
-import { MatButtonModule} from "@angular/material";
+import {MatButtonModule, MatProgressBarModule} from "@angular/material";
+import {HttpClientModule} from "@angular/common/http";
+import {UploadFileService} from "./upload-file.service";
 
 
 @NgModule({
@@ -21,10 +23,15 @@ import { MatButtonModule} from "@angular/material";
   imports: [
     BrowserModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientModule,
+    MatProgressBarModule
   ],
   providers: [
-    ChangeStateEventEmitterService
+
+    // HttpClient,
+    ChangeStateEventEmitterService,
+    UploadFileService
   ],
   bootstrap: [AppComponent]
 })
