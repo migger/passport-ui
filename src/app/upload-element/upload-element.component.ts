@@ -8,10 +8,8 @@ import {HttpEventType} from "@angular/common/http";
   styleUrls: ['./upload-element.component.css']
 })
 export class UploadElementComponent implements OnInit {
-  uploadFileService: UploadFileService;
-
   constructor(private uploadFileService: UploadFileService) {
-    this.uploadFileService = uploadFileService;
+
     console.log(uploadFileService);
 
   }
@@ -24,7 +22,7 @@ export class UploadElementComponent implements OnInit {
     inputElement.type = "file";
     inputElement.multiple = true;
     inputElement.onchange = (event) => {
-      this.uploadFileService.uploadFiles(event.target.files);
+      this.uploadFileService.uploadFiles(event.target["files"]);
     };
     inputElement.click();
   }

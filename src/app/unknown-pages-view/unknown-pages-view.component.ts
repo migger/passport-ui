@@ -14,15 +14,15 @@ export class UnknownPagesViewComponent implements OnInit {
   constructor(private changeStateEventEmitterService: ChangeStateEventEmitterService, uploadFileService: UploadFileService) {
     changeStateEventEmitterService.emitter.subscribe((data) => this.stateUpdated(data));
     uploadFileService.startedEmitter.subscribe((data) => {
-      const item = {data: data, progress: 0.0, name: data.name};
+      const item = {data: data, progress: 0.0, name: data.name, error: null};
       const array = this.loadingArray;
       array.push(item);
       data.progress.subscribe((e) => item.progress = e.progress);
       data.finish.subscribe(() => array.splice(array.indexOf(item), 1));
       data.error.subscribe(() => {
-        item.error = "Не могу загрузить этот файл! :'("
+        item.error = "Не могу загрузить этот файл! :'(";
+        setTimeout(() => array.splice(array.indexOf(item), 1), 5000)
       });
-      setTimeout(() => array.splice(array.indexOf(item), 1), 5000)
     })
   }
 
